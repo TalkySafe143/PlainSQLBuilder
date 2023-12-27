@@ -1,6 +1,6 @@
 {
   "name": "plainsqlbuilder",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Plain text SQL builder with JSON object",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
