@@ -1,12 +1,12 @@
 {
   "name": "plainsqlbuilder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plain text SQL builder with JSON object",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/types/plainsqlbuilderTypes.d.mts",
   "files": [
-      "dist"
+    "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
