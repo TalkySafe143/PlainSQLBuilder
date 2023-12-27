@@ -1,0 +1,33 @@
+{
+  "name": "plainsqlbuilder",
+  "version": "1.0.0",
+  "description": "Plain text SQL builder with JSON object",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+      "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalkySafe143/PlainSQLBuilder.git"
+  },
+  "keywords": [
+    "sql"
+  ],
+  "author": "Sebastian Galindo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TalkySafe143/PlainSQLBuilder/issues"
+  },
+  "homepage": "https://github.com/TalkySafe143/PlainSQLBuilder#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
