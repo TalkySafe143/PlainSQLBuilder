@@ -110,11 +110,11 @@ export function generateQuery(queries : QueryObject) {
 
         statement += `HAVING ${filters.join("")} ;`
     }
-    return statement;
+    return statement + ";";
 }
 
 export function generateInsertStatement(table : string, data : object) {
-    return `INSERT INTO ${table} (${Object.keys(data).join(", ")}) VALUES(${Object.values(data).join(", ")}) `
+    return `INSERT INTO ${table} (${Object.keys(data).join(", ")}) VALUES(${Object.values(data).join(", ")});`
 }
 
 
@@ -143,7 +143,7 @@ export function generateUpdateStatement(table : string, update : UpdateObject) {
 
     statement += `WHERE ${filters.join("")} `
 
-    return statement;
+    return statement + ";";
 }
 
 export function generateDeleteStatement(table : string, deleteData : DeleteStatement) {
@@ -158,5 +158,5 @@ export function generateDeleteStatement(table : string, deleteData : DeleteState
 
     statement += `WHERE ${filters.join("")} `;
 
-    return statement;
+    return statement + ";";
 }
