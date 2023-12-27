@@ -4,7 +4,7 @@
   "description": "Plain text SQL builder with JSON object",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/plainsqlbuilderTypes.d.mts",
   "files": [
       "dist"
   ],
