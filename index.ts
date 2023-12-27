@@ -1,6 +1,6 @@
 import { DeleteStatement, QueryObject, RenameStatement, UpdateObject, WhereStatement } from './types/plainsqlbuilderTypes'
 
-const generateConditionQuery = (where : WhereStatement, filters: string[]) => {
+export const generateConditionQuery = (where : WhereStatement, filters: string[]) => {
     filters.push(
         `${where["column"]} ${where["type"]} (${
             typeof(where["value"]) === "string" ? where["value"] : generateQuery(where["value"])
@@ -10,7 +10,7 @@ const generateConditionQuery = (where : WhereStatement, filters: string[]) => {
     )
 }
 
-function generateQuery(queries : QueryObject) {
+export function generateQuery(queries : QueryObject) {
     let statement : string = "SELECT ";
     // SELECT comes as a string array or object to rename
     /*
@@ -113,7 +113,7 @@ function generateQuery(queries : QueryObject) {
     return statement;
 }
 
-function generateInsertStatement(table : string, data : object) {
+export function generateInsertStatement(table : string, data : object) {
     return `INSERT INTO ${table} (${Object.keys(data).join(", ")}) VALUES(${Object.values(data).join(", ")}) `
 }
 
@@ -132,7 +132,7 @@ function generateInsertStatement(table : string, data : object) {
 * }
 *
 * */
-function generateUpdateStatement(table : string, update : UpdateObject) {
+export function generateUpdateStatement(table : string, update : UpdateObject) {
     let statement = `UPDATE ${table} SET ${update["column"]} = ${update["newValue"]} `
 
     const filters : string[] = [];
@@ -146,7 +146,7 @@ function generateUpdateStatement(table : string, update : UpdateObject) {
     return statement;
 }
 
-function generateDeleteStatement(table : string, deleteData : DeleteStatement) {
+export function generateDeleteStatement(table : string, deleteData : DeleteStatement) {
     if (!deleteData["condition"]) throw ('Para eliminar debe tener un Condition Object')
     let statement = `DELETE FROM ${table} `;
 
@@ -160,5 +160,3 @@ function generateDeleteStatement(table : string, deleteData : DeleteStatement) {
 
     return statement;
 }
-
-module.exports = { generateQuery, generateInsertStatement, generateUpdateStatement, generateDeleteStatement }
