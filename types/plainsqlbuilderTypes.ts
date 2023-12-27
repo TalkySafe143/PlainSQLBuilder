@@ -52,17 +52,17 @@ export type JoinStatement = {
 }
 
 export type QueryObject = {
-    SELECT: string[] | RenameStatement[] | undefined,
+    SELECT?: string[] | RenameStatement[],
     FROM: [string , JoinStatement?],
-    WHERE: WhereStatement[],
+    WHERE?: WhereStatement[],
     /**
      * Columns to be grouped
      */
-    GROUP_BY: string[],
+    GROUP_BY?: string[],
     /**
      * Conditions to group
      */
-    HAVING: WhereStatement[]
+    HAVING?: WhereStatement[]
 }
 
 export type UpdateObject = {
